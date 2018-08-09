@@ -1,0 +1,17 @@
+<script src="dist/one.js"></script>
+<script src="dist/two.js"></script>
+<script src="dist/three.js"></script>
+
+<body>
+  <el-one name="one"></el-one>
+  <el-two name="two"></el-two>
+  <el-three name="three"></el-three>
+</body>
+
+<script>
+  const one = MyLibrary.one;
+  const two = MyLibrary.two;
+  customElements.define('el-one', one.default);
+  customElements.define('el-two', two.default);
+  customElements.define('el-three', MyLibrary.three.default);
+</script>

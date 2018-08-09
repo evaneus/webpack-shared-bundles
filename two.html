@@ -1,0 +1,10 @@
+<script src="dist/two.js"></script>
+
+<body>
+  <el-two name="two"></el-two>
+</body>
+
+<script>
+  const two = MyLibrary.two;
+  customElements.define('el-two', two.default);
+</script>

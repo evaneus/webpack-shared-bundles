@@ -1,0 +1,10 @@
+<script src="dist/one.js"></script>
+
+<body>
+  <el-one name="one"></el-one>
+</body>
+
+<script>
+  const one = MyLibrary.one;
+  customElements.define('el-one', one.default);
+</script>

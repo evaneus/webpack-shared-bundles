@@ -1,0 +1,25 @@
+{
+  "name": "webpack-multiparty-optimize",
+  "version": "1.0.0",
+  "description": "This example demonstrates how to build a complex library with webpack. The library consist of multiple parts that are usable on its own and together.",
+  "main": "alpha.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "packages": "lerna exec -- npm install",
+    "clean": "rimraf ./dist/*",
+    "build": "npm run clean && webpack-cli",
+    "serve": "serve"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "lerna": "^3.0.0-rc.0",
+    "rimraf": "^2.6.2",
+    "serve": "^9.4.0",
+    "webpack": "^4.16.5",
+    "webpack-bundle-analyzer": "^2.13.1",
+    "webpack-cli": "^3.1.0"
+  }
+}
