@@ -8,6 +8,7 @@
   },
   "scripts": {
     "packages": "lerna exec -- npm install",
+    "postinstall": "npm run packages",
     "clean": "rimraf ./dist/*",
     "hoist": "lerna bootstrap --hoist",
     "build": "npm run clean && npm run hoist && webpack-cli",
