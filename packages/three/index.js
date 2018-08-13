@@ -25,7 +25,7 @@ export default class Three extends HTMLElement {
         {
           name: this.getAttribute('name')
         },
-        `Hello three ${_.nth(['cruel', 'evil'], _.random(1, 2))} world`
+        `Hello three ${_.nth(['cruel', 'evil'], _.random(0, 1))} world`
       );
       ReactDOM.render(element, reactDiv);
       

@@ -16,7 +16,7 @@ export default class Two extends HTMLElement {
         {
           name: this.getAttribute('name')
         },
-        `Hello two ${_.nth(['cruel', 'evil'], _.random(1, 2))} world`
+        `Hello two ${_.nth(['cruel', 'evil'], _.random(0, 1))} world`
       );
       ReactDOM.render(element, this);
     });

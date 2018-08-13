@@ -9,8 +9,10 @@
   "scripts": {
     "packages": "lerna exec -- npm install",
     "clean": "rimraf ./dist/*",
-    "build": "npm run clean && webpack-cli",
-    "serve": "serve"
+    "hoist": "lerna bootstrap --hoist",
+    "build": "npm run clean && npm run hoist && webpack-cli",
+    "serve": "serve",
+    "start": "npm run build && serve"
   },
   "author": "",
   "license": "ISC",
@@ -20,6 +22,11 @@
     "serve": "^9.4.0",
     "webpack": "^4.16.5",
     "webpack-bundle-analyzer": "^2.13.1",
-    "webpack-cli": "^3.1.0"
+    "webpack-chunk-rename-plugin": "^1.0.3",
+    "webpack-cli": "^3.1.0",
+    "whybundled": "^1.4.0"
+  },
+  "dependencies": {
+    "webpack-manifest-plugin": "^2.0.3"
   }
 }

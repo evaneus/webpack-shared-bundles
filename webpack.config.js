@@ -1,10 +1,14 @@
 // see https://github.com/webpack/webpack/issues/6977
 
-var path = require('path');
+const path = require('path');
+const webpack = require('webpack');
+const ChunkRenamePlugin = require("webpack-chunk-rename-plugin");
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const ManifestPlugin = require('webpack-manifest-plugin');
+
 
 module.exports = {
-  mode: 'production',
+  // mode: 'development',
   entry: { 
 		one: './packages/one/index',
     two: './packages/two/index',
@@ -20,18 +24,20 @@ module.exports = {
     libraryTarget: 'umd'
   },
   optimization: {
-    // runtimeChunk: 'multiple',
-    // runtimeChunk: {
-    //   name: 'shared',
-    // },
+    runtimeChunk: 'single',
     minimize: false,
     splitChunks: {
-      minChunks:1,
-			// xmaxSize: 200000,
+      name: '[contenthash]',
+      minChunks:2,
       chunks: 'all'
     }
   },
   plugins: [
-    new BundleAnalyzerPlugin()
+    new ChunkRenamePlugin({
+      initialChunksWithEntry: true,
+    }),
+    new BundleAnalyzerPlugin({analyzerMode:'static'}),
+    new ManifestPlugin(),
+ 
   ]
 };
